@@ -1,0 +1,6 @@
+plugin:
+    name: 'btdev.blogauthorbackend::lang.plugin.name'
+    description: 'btdev.blogauthorbackend::lang.plugin.description'
+    author: BTDev
+    icon: oc-icon-user-md
+    homepage: ''
