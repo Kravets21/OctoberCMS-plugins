@@ -11,8 +11,12 @@ class BuilderTableCreateBtdevBlogauthorbackendAuthors extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
-            $table->string('nickname', 50);
-            $table->text('about');
+            $table->string('nickname', 50)->nullable();
+            $table->text('about')->nullable();
+	    $table->integer('backend_user_id')->unsigned()->nullable();
+            $table->timestamp('deleted_at')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
     

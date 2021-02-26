@@ -27,23 +27,25 @@ class Author extends Model
     ];
     
     public $belongsTo = [
-	'user' => ['Backend\Models\User']
+	'user' => ['Backend\Models\User', 
+	'key' => 'id', 
+	'otherKey' => 'backend_user_id']
     ];
     
     public $hasMany = [
-	'posts' => ['RainLab\Blog\Models\Post', 'key' => 'user_id', 'otherKey' => 'backend_user_id']
+	'posts' => ['RainLab\Blog\Models\Post', 
+	'key' => 'user_id', 
+	'otherKey' => 'backend_user_id']
     ];
     
     public static function getAuthors()
     {
-	$authors = BackendUser::whereHas('role', function($query) {
-	    $query->where('name', '=', self::ROLE_NAME_AUTHOR);
-	})->get();
+	$authors = BackendUser::whereHas('author')->get();
 	
 	return $authors;
     }
     
-    public static function getFromUser($user)
+    public static function createAuthor($user)
     {
 	$author = new static;
 	$author->user = $user;

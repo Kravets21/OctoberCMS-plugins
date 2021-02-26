@@ -3,15 +3,15 @@
 use Cms\Classes\ComponentBase;
 use BTDev\BlogAuthorBackend\Models\Author as Author;
 
-class AuthorPosts extends ComponentBase
+class AuthorProfile extends ComponentBase
 {
     public $author;
     
     public function componentDetails()
     {
         return [
-            'name'        => 'AuthorPosts Component',
-            'description' => 'Displays all posts of author'
+            'name'        => 'AuthorProfile Component',
+            'description' => 'Displays all information about author'
         ];
     }
 
@@ -37,9 +37,5 @@ class AuthorPosts extends ComponentBase
     {
         return $this->author->posts;
     }
-    
-    public function getAuthor() 
-    {
-        return $this->author;
-    }
+
 }

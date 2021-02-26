@@ -34,19 +34,19 @@ trait ExtendBackendUserModel
 		
 		if(!$model->author)
 		{
-		    AuthorModel::getFromUser($model);
+		    AuthorModel::createAuthor($model);
 		}
 		
 		$form->addTabFields([
-		    'author[about]' => [
-			'label'   => 'About',
-			'type' => 'textarea',
-			'tab' => 'Author',
-		    ],
 		    'author[nickname]' => [
 			'label'   => 'Nickname',
 			'type' => 'text',
-			'span' => 'left',
+			'tab' => 'Author',
+			'required' => '1',
+		    ],
+		    'author[about]' => [
+			'label'   => 'About',
+			'type' => 'textarea',
 			'tab' => 'Author',
 		    ],
 		]);

@@ -10,7 +10,7 @@ class Plugin extends PluginBase
     {
 	return [
 	    Components\AuthorsList::class => 'AuthorsList',
-	    Components\AuthorPosts::class => 'AuthorPosts'	
+	    Components\AuthorProfile::class => 'AuthorProfile'	
 	];
     }
 
@@ -20,8 +20,5 @@ class Plugin extends PluginBase
     
     public function boot(){
 	$this->extendBackendUser();
-	 // посмотреть как расширить бекенд юзера при помощи событий 
-	// сделать так чтобы создавались новые инпуты при создании автора в настройках админки и автоматически записывались и в нашу таблицу
-	// никнейм автоматически создавать нейм+ластнейм с помощью хелперов + поле "about"
     }
 }
