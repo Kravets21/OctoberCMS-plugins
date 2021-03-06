@@ -3,4 +3,5 @@
 1.0.2:
     - 'Created table btdev_blogauthorbackend_authors'
     - builder_table_create_btdev_blogauthorbackend_authors.php
-
+1.0.3:
+    - 'created new role`s checking'

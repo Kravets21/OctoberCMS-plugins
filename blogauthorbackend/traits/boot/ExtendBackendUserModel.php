@@ -17,23 +17,25 @@ trait ExtendBackendUserModel
     private function extendUserModels()
     {
 	BackendUserModel::extend(function ($model) {
-	    $model->hasOne['author'] = ['BTDev\BlogAuthorBackend\Models\Author', 
+	    
+	    $model->hasOne['author'] = [
+		'BTDev\BlogAuthorBackend\Models\Author', 
 		'key' => 'backend_user_id', 
-		'otherKey' => 'id'];
+		'otherKey' => 'id'
+	    ];
 	});
 	
-	BackendUsersController::extendFormFields(function($form, $model, $context){
-	    
+	BackendUsersController::extendFormFields(function($form, $model, $context) {
             if (!$model instanceof BackendUserModel)
                 return;
 	    
             if (!$model->exists)
                 return;
 	    
-	    if($model->role->name == AuthorModel::ROLE_NAME_AUTHOR){
+	    if(isset($model->role->name) && $model->role->name == AuthorModel::ROLE_NAME_AUTHOR) {
 		
-		if(!$model->author)
-		{
+		if(!$model->author) {
+		    
 		    AuthorModel::createAuthor($model);
 		}
 		
@@ -51,9 +53,6 @@ trait ExtendBackendUserModel
 		    ],
 		]);
 	    }
-	    
         });
-	
     }
-
 }

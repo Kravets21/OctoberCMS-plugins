@@ -38,4 +38,8 @@ class AuthorProfile extends ComponentBase
         return $this->author->posts;
     }
 
+    public function getAuthor() 
+    {
+        return $this->author;
+    }
 }

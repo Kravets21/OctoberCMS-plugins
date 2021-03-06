@@ -18,7 +18,8 @@ class Plugin extends PluginBase
     {
     }
     
-    public function boot(){
+    public function boot()
+    {
 	$this->extendBackendUser();
     }
 }
