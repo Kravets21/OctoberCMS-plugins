@@ -1,9 +1,10 @@
 # OctoberCMS plugins
+Автор - новая роль в BackendUser, которую нужно создать c именем "Author". Сделать это можно в настройках OcotoberCMS: administrators/manage roles/new role.
+Плагин расширяет юзера и добавляет новую форму при выборе роли "Автор" с полями nickname и about.
+
 Компоненты: AuthorsList и AuthorProfile
 # *AuthorsList - выводит список всех авторов
 # *AuthorProfile - выводит всю информацию про автора и все его посты
-
-Автор - новая роль у BackendUser. Плагин расширяет юзера и добавляет новую форму при выборе роли "Автор" с полями nickname и about.
 
 # [AuthorsList]
 ==
